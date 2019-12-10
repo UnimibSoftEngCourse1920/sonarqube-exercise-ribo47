@@ -77,7 +77,8 @@ public class TestSuite implements Test {
      * Gets a constructor which takes a single String as
      * its argument or a no arg constructor.
      */
-    public static Constructor<?> getTestConstructor(Class<?> theClass) throws NoSuchMethodException {
+    @SuppressWarnings("rawtypes")
+    public static Constructor getTestConstructor(Class<?> theClass) throws NoSuchMethodException {
         try {
             return theClass.getConstructor(String.class);
         } catch (NoSuchMethodException e) {
